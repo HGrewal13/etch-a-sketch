@@ -17,13 +17,9 @@
   
   .row {
     display: flex;
-    /* gap: 2px; */
     flex: 1 1 auto;
   }
   
   .createdDiv {
-    border: 1px solid blue;
-    /* width: 25px;
-    height: 25px; */
-    /* margin-bottom: 2px; */
+    border: 1px solid black;
   }
