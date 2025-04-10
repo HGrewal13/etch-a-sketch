@@ -8,16 +8,22 @@
 </head>
 <body>
     <h1>Etch A Sketch</h1>
-
-    <div id="etchASketch">
-        <div id="sketchContainer"></div>
-        
-        <div class="buttons">
-          <button id="clearBoard">
-            Clear Board
-          </button>
+    <div id="mainContainer">
+        <div id="etchASketch">
+            <div id="tileSpecsDiv">
+                <span>Tile Count:</span>
+                <input type="text" class="tileSpecs" placeholder="NOT ACTIVE">
+                <button id="confirmTiles">Change</button>
+            </div>
+            <div id="sketchContainer"></div>
+            
+            <div class="buttons">
+                <!-- <input type="color" name="color" id="color" value="#ff0000"> -->
+                <button id="clearBoard">Clear Board</button>
+            </div>
         </div>
     </div>
+
 
 
     <script src="./scripts.js"></script>

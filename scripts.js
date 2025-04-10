@@ -3,6 +3,7 @@ let clearButton = document.querySelector("#clearBoard");
 
 function createGrid(size) {
     let sketchContainerWidth = sketchContainer.offsetWidth;
+    console.log(sketchContainerWidth);
     // Generate grid rows with property display: flex. Necessary to generate column divs in the same row
 	for(let i = 0; i < size; i++) {
   	let row = document.createElement("div");
@@ -40,4 +41,4 @@ sketchContainer.addEventListener("mouseover", function(event) {
 clearButton.addEventListener("click", resetBoard);
 
 
-createGrid(16);
+createGrid(64);

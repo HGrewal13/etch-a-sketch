@@ -1,25 +1,44 @@
 * {
     box-sizing: border-box;
-  }
+}
+
+h1 {
+    text-align: center;
+}
+
+#mainContainer {
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+}
   
-  #etchASketch {
+#etchASketch {
+    border: 1px solid purple;
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  #sketchContainer {
+#sketchContainer {
     border: 1px solid red;
     width: 500px;
     height: 500px;
-  }
+}
   
-  .row {
+.row {
     display: flex;
     flex: 1 1 auto;
-  }
+}
   
-  .createdDiv {
-    border: 1px solid black;
-  }
+.createdDiv {
+    border: 1px solid lightgrey;
+}
+
+.buttons {
+    border: 1px solid red;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
