@@ -1,5 +1,10 @@
 let sketchContainer = document.querySelector("#sketchContainer");
 let clearButton = document.querySelector("#clearBoard");
+let changeTileCountButton = document.querySelector("#changeTileCount");
+let blackHighlightButton = document.querySelector("#blackHighlight");
+let randomHighLightButton = document.querySelector("#randomHighlight");
+let blackHighlightFlag = true;
+let randomHighlightFlag = false;
 
 function createGrid(size) {
     let sketchContainerWidth = sketchContainer.offsetWidth;
@@ -21,8 +26,15 @@ function createGrid(size) {
   }
 }
 
-function highlight() {
-	this.style.backgroundColor = "blue";
+function highlight(element) {
+	element.style.backgroundColor = "black";
+}
+
+function randomHighlight(element) {
+    let r = Math.floor(Math.random() * (255 - 0));
+    let g = Math.floor(Math.random() * (255 - 0));
+    let b = Math.floor(Math.random() * (255 - 0));
+    element.style.backgroundColor = `rgb(${r},${g},${b})`;
 }
 
 function resetBoard() {
@@ -30,15 +42,57 @@ function resetBoard() {
     squares.forEach((square) => square.style.backgroundColor = "white");
 };
 
+function changeTileCount(n) {
+    // let rows = document.querySelectorAll(".row");
+    sketchContainer.innerHTML = null;
+    createGrid(n);
+}
+
+function changeFlags() {
+    blackHighlightFlag = !blackHighlightFlag;
+    randomHighlightFlag = !randomHighlightFlag;
+}
+
+// ------------------- EVENT LISTENERS -----------------------
+
+
+randomHighLightButton.addEventListener("click", () => {
+    // blackHighlightFlag = false;
+    // randomHighlightFlag = true;
+    changeFlags();
+});
+
+blackHighlightButton.addEventListener("click", () => {
+    // blackHighlightFlag = true;
+    // randomHighlightFlag = false;
+    changeFlags();
+});
+
 // Event delegation
 // Target parent element in order to add event listener to target all elements with class = createdDiv
+// Passing in event.target to highlight function works because we're passing in the delegated element as an arguement
 sketchContainer.addEventListener("mouseover", function(event) {
     if(event.target.className == "createdDiv") {
-  	    event.target.style.backgroundColor = "blue";
+        if(blackHighlightFlag == true) {
+            highlight(event.target);
+        }
+        else if(randomHighlightFlag == true) {
+            randomHighlight(event.target);
+        }
     }
+});
+
+changeTileCountButton.addEventListener("click", function(event) {
+    let tileCount = parseInt(prompt("Enter in number of tiles"));
+    while (tileCount <= 0 || tileCount > 100) {
+        tileCount = parseInt(prompt("Enter in number of tiles"));
+    }
+    changeTileCount(tileCount);
 });
 
 clearButton.addEventListener("click", resetBoard);
 
 
-createGrid(64);
+// --------------- RUN ------------------
+
+createGrid(16);
