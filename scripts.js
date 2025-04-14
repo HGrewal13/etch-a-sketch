@@ -48,24 +48,17 @@ function changeTileCount(n) {
     createGrid(n);
 }
 
-function changeFlags() {
-    blackHighlightFlag = !blackHighlightFlag;
-    randomHighlightFlag = !randomHighlightFlag;
-}
-
 // ------------------- EVENT LISTENERS -----------------------
 
 
 randomHighLightButton.addEventListener("click", () => {
-    // blackHighlightFlag = false;
-    // randomHighlightFlag = true;
-    changeFlags();
+    blackHighlightFlag = false;
+    randomHighlightFlag = true;
 });
 
 blackHighlightButton.addEventListener("click", () => {
-    // blackHighlightFlag = true;
-    // randomHighlightFlag = false;
-    changeFlags();
+    blackHighlightFlag = true;
+    randomHighlightFlag = false;
 });
 
 // Event delegation

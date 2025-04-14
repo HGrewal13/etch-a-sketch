@@ -8,6 +8,8 @@ body {
 
 h1 {
     text-align: center;
+    color: yellow;
+    font-style: italic;
 }
 
 #mainContainer {
@@ -25,7 +27,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: crimson;
+    background-color: firebrick;
 }
 
 #sketchContainer {
