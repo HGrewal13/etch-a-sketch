@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: teal;
+}
+
 h1 {
     text-align: center;
 }
@@ -13,7 +17,7 @@ h1 {
 }
   
 #etchASketch {
-    border: 1px solid purple;
+    border: 1px solid red;
     border-radius: 10%;
     /* padding: 10px; */
     width: 800px;
@@ -21,10 +25,11 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: crimson;
 }
 
 #sketchContainer {
-    border: 1px solid red;
+    border: 1px solid black;
     width: 500px;
     height: 500px;
 }
@@ -35,11 +40,12 @@ h1 {
 }
   
 .createdDiv {
-    border: 1px solid lightgrey;
+    border: 1px solid lightslategray;
+    background-color: lightgray;
 }
 
 .buttons {
-    border: 1px solid red;
+    border: 1px solid white;
     /* width: 500px; */
     width: 100%;
     display: flex;
