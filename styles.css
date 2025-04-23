@@ -1,15 +1,23 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: teal;
+    border: 1px solid red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
     color: yellow;
     font-style: italic;
+    margin: 20px 0;
 }
 
 #mainContainer {
@@ -32,7 +40,7 @@ h1 {
 
 #sketchContainer {
     border: 1px solid black;
-    width: 500px;
+    width: 600px;
     height: 500px;
 }
   
@@ -57,8 +65,8 @@ h1 {
 .buttons button {
     border: none;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     background-color: lightgray;
 }
 
@@ -68,4 +76,8 @@ h1 {
 
 button {
     margin: 15px 0;
+}
+
+#resize {
+    padding: 10px 20px;
 }

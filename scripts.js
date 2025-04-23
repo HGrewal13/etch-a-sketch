@@ -1,6 +1,6 @@
 let sketchContainer = document.querySelector("#sketchContainer");
 let clearButton = document.querySelector("#clearBoard");
-let changeTileCountButton = document.querySelector("#changeTileCount");
+let changeTileCountButton = document.querySelector("#resize");
 let blackHighlightButton = document.querySelector("#blackHighlight");
 let randomHighLightButton = document.querySelector("#randomHighlight");
 let blackHighlightFlag = true;
@@ -19,7 +19,8 @@ function createGrid(size) {
         column.classList.add("createdDiv");
         /* ensure squares are created without leaking out of container */
         column.style.width = `calc(${sketchContainerWidth}px/${size})`; 
-        column.style.height = `calc(${sketchContainerWidth}px/${size})`; 
+        // column.style.height = `calc(${sketchContainerWidth}px/${size})`; 
+        column.style.height = `calc(500px/${size})`;
         row.appendChild(column);
     }
     sketchContainer.appendChild(row);
@@ -77,10 +78,16 @@ sketchContainer.addEventListener("mouseover", function(event) {
 
 changeTileCountButton.addEventListener("click", function(event) {
     let tileCount = parseInt(prompt("Enter in number of tiles"));
+    console.log(tileCount);
     while (tileCount <= 0 || tileCount > 100) {
         tileCount = parseInt(prompt("Enter in number of tiles"));
     }
-    changeTileCount(tileCount);
+    if (tileCount === null) {
+        changeTileCount(16);
+    } else {
+        changeTileCount(tileCount);
+    }
+    
 });
 
 clearButton.addEventListener("click", resetBoard);
