@@ -77,18 +77,23 @@ sketchContainer.addEventListener("mouseover", function(event) {
 });
 
 changeTileCountButton.addEventListener("click", function(event) {
-    let tileCount = parseInt(prompt("Enter in number of tiles"));
-    console.log(tileCount);
-    while (tileCount <= 0 || tileCount > 100) {
-        tileCount = parseInt(prompt("Enter in number of tiles"));
-    }
-    if (tileCount === null) {
-        changeTileCount(16);
-    } else {
-        changeTileCount(tileCount);
-    }
+    let input = prompt("Enter number of tiles (1-100):");
     
+    // If user clicks cancel, exit early
+    if (input === null) return;
+
+    let tileCount = parseInt(input);
+
+    // Validate number
+    while (isNaN(tileCount) || tileCount <= 0 || tileCount > 100) {
+        input = prompt("Please enter a valid number between 1 and 100:");
+        if (input === null) return;
+        tileCount = parseInt(input);
+    }
+
+    changeTileCount(tileCount);
 });
+
 
 clearButton.addEventListener("click", resetBoard);
 
